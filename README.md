@@ -11,6 +11,16 @@ Inspired by [ha-teamtracker-card](https://github.com/vasqued2/ha-teamtracker-car
 - **POST**: Finished match – logos, names, final score, venue
 - **NOT_FOUND**: No match or API error
 
+### PRE Game Example
+<img width="502" height="278" alt="cs2-pre-game" src="https://github.com/user-attachments/assets/4dc92480-ab06-4ffa-ab6d-afbe1ce2b18c" />
+
+### IN Game Example
+<img width="499" height="276" alt="cs2-in-game" src="https://github.com/user-attachments/assets/160a5e4b-1767-4536-b4d9-ca193dcfcb7b" />
+
+
+### NOT_FOUND Game Examples
+<img width="500" height="152" alt="cs2-not-found" src="https://github.com/user-attachments/assets/c400934e-0e30-464e-9867-5e0bee2ebce8" />
+
 ## Installation
 
 ### HACS
