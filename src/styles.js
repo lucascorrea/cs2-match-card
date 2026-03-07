@@ -8,10 +8,28 @@ export const cardStyles = css`
     font-weight: 400;
     border-radius: var(--ha-card-border-radius, 10px);
   }
+  .team-bg {
+    opacity: 0.08;
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 58%;
+    z-index: 0;
+  }
+  .opponent-bg {
+    opacity: 0.08;
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: 58%;
+    z-index: 0;
+  }
   .title {
     text-align: center;
     font-size: 1.2em;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
   }
   .card-content {
     display: flex;
@@ -44,6 +62,8 @@ export const cardStyles = css`
     height: 1px;
     background-color: var(--primary-text-color);
     margin: 10px 0;
+    position: relative;
+    z-index: 1;
   }
   .live-badge {
     display: inline-block;
@@ -54,18 +74,24 @@ export const cardStyles = css`
     padding: 2px 8px;
     border-radius: 4px;
     margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
   }
   .venue {
     font-size: 1em;
     color: var(--secondary-text-color);
     text-align: center;
     margin: 4px 0 12px;
+    position: relative;
+    z-index: 1;
   }
   .date-time {
     text-align: center;
     margin: 8px 0;
     font-size: 1.1em;
     font-weight: 500;
+    position: relative;
+    z-index: 1;
   }
   .game-weekday {
     font-size: 1.4em;
@@ -86,5 +112,7 @@ export const cardStyles = css`
     font-size: 1.2em;
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 1;
   }
 `;

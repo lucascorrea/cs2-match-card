@@ -3,6 +3,10 @@ import { html } from "lit";
 export function renderPost(c) {
   return html`
     <ha-card class="card">
+      <!-- Background logos -->
+      <img class="team-bg" src="${c.logo[1] || "/local/cs2-placeholder.png"}" alt="" />
+      <img class="opponent-bg" src="${c.logo[2] || "/local/cs2-placeholder.png"}" alt="" />
+      
       ${c.title ? html`<div class="title">${c.title}</div>` : ""}
       <div class="line"></div>
       <div class="card-content">
