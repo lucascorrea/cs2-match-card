@@ -57,19 +57,19 @@ export function formatGameDate(date, hass) {
     if (isToday) {
       return {
         weekday: localize("today", hass),
-        date: d.toLocaleDateString(language, { month: "short", day: "numeric" }),
+        date: d.toLocaleDateString(language, { month: "long", day: "numeric" }),
         time: d.toLocaleTimeString(language, { hour: "2-digit", minute: "2-digit" })
       };
     } else if (isTomorrow) {
       return {
         weekday: localize("tomorrow", hass),
-        date: d.toLocaleDateString(language, { month: "short", day: "numeric" }),
+        date: d.toLocaleDateString(language, { month: "long", day: "numeric" }),
         time: d.toLocaleTimeString(language, { hour: "2-digit", minute: "2-digit" })
       };
     } else {
       return {
         weekday: d.toLocaleDateString(language, { weekday: "long" }),
-        date: d.toLocaleDateString(language, { month: "short", day: "numeric" }),
+        date: d.toLocaleDateString(language, { month: "long", day: "numeric" }),
         time: d.toLocaleTimeString(language, { hour: "2-digit", minute: "2-digit" })
       };
     }

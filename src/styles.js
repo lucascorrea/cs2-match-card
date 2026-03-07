@@ -44,10 +44,10 @@ export const cardStyles = css`
     width: 35%;
   }
   .team img {
-    max-width: 90px;
+    max-width: 130px;
   }
   .logo {
-    max-height: 6.5em;
+    max-height: 9.5em;
   }
   .score {
     font-size: var(--score_size, 3em);
