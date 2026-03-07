@@ -790,19 +790,25 @@ const $1a7c5d625ead7579$export$c579ff79a032fc68 = (0, $def2de46b9306e8a$export$d
     border-radius: var(--ha-card-border-radius, 10px);
   }
   .team-bg {
-    opacity: 0.08;
+    opacity: 0.02;
     position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 58%;
+    top: 50%;
+    left: -10%;
+    width: 70%;
+    height: 70%;
+    transform: translateY(-50%);
+    object-fit: contain;
     z-index: 0;
   }
   .opponent-bg {
-    opacity: 0.08;
+    opacity: 0.02;
     position: absolute;
-    top: -20%;
-    right: -20%;
-    width: 58%;
+    top: 50%;
+    right: -10%;
+    width: 70%;
+    height: 70%;
+    transform: translateY(-50%);
+    object-fit: contain;
     z-index: 0;
   }
   .title {
