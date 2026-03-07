@@ -2,7 +2,7 @@
 
 Home Assistant Lovelace card that displays the next CS2 match from the [cs2-tracker](https://github.com/lucascorrea/cs2-tracker) integration.
 
-Inspired by [ha-teamtracker-card](https://github.com/vasqued2/ha-teamtracker-card).
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/lucasc0rrea)
 
 ## States
 
