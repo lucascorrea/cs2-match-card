@@ -9,7 +9,10 @@ export function renderIn(c) {
       
       ${c.title ? html`<div class="title">${c.title}</div>` : ""}
       <div class="line"></div>
-      <div class="live-badge">${c.live}</div>
+      <div class="live-venue-row">
+        ${c.venue ? html`<div class="venue-center">${c.venue}</div>` : ""}
+        <div class="live-badge">${c.live}</div>
+      </div>
       <div class="card-content">
         <div class="team">
           <img
@@ -33,7 +36,6 @@ export function renderIn(c) {
           <div class="score">${c.score[2] ?? "—"}</div>
         </div>
       </div>
-      ${c.venue ? html`<div class="venue">${c.venue}</div>` : ""}
     </ha-card>
   `;
 }

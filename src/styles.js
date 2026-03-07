@@ -65,17 +65,29 @@ export const cardStyles = css`
     position: relative;
     z-index: 1;
   }
+  .live-venue-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 8px;
+    z-index: 1;
+  }
+  .venue-center {
+    font-size: 1em;
+    color: var(--secondary-text-color);
+    text-align: center;
+    flex: 1;
+  }
   .live-badge {
-    display: inline-block;
     background: #e53935;
     color: white;
     font-size: 0.9em;
     font-weight: 700;
     padding: 2px 8px;
     border-radius: 4px;
-    margin-bottom: 8px;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    right: 0;
   }
   .venue {
     font-size: 1em;
