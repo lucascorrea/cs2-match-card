@@ -1,0 +1,21 @@
+{
+  "name": "cs2-match-card",
+  "version": "0.1.0",
+  "source": "./src/cs2-match-card.js",
+  "module": "./dist/cs2-match-card.js",
+  "targets": {
+    "module": {
+      "includeNodeModules": true
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch src/cs2-match-card.js --dist-dir dist",
+    "build": "parcel build src/cs2-match-card.js --dist-dir dist"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "lit": "^3.2.0"
+  }
+}

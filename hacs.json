@@ -1,0 +1,7 @@
+{
+  "name": "CS2 Match Card",
+  "filename": "cs2-match-card.js",
+  "render_readme": true,
+  "hide_default_branch": false,
+  "homeassistant": "2024.1.0"
+}
