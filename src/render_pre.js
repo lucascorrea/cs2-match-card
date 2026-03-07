@@ -5,6 +5,7 @@ export function renderPre(c) {
     <ha-card class="card">
       ${c.title ? html`<div class="title">${c.title}</div>` : ""}
       <div class="line"></div>
+      ${c.venue ? html`<div class="venue">${c.venue}</div>` : ""}
       <div class="card-content">
         <div class="team">
           <img
@@ -26,7 +27,6 @@ export function renderPre(c) {
           <div class="name">${c.name[2] || "—"}</div>
         </div>
       </div>
-      ${c.venue ? html`<div class="venue">${c.venue}</div>` : ""}
       ${(c.gameWeekday || c.gameDate || c.gameTime) ? html`
         <div class="date-time">
           ${[c.gameWeekday, c.gameDate, c.gameTime].filter(Boolean).join(' • ')}

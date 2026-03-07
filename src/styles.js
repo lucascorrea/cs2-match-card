@@ -59,7 +59,7 @@ export const cardStyles = css`
     font-size: 1em;
     color: var(--secondary-text-color);
     text-align: center;
-    margin: 8px 0 4px;
+    margin: 4px 0 12px;
   }
   .date-time {
     text-align: center;
