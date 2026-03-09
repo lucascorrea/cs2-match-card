@@ -25,7 +25,7 @@ Home Assistant Lovelace card that displays the next CS2 match from the [cs2-trac
 
 ### HACS
 
-1. HACS → Frontend → Custom repositories → Add `https://github.com/your-username/cs2-match-card`
+1. HACS → Frontend → Custom repositories → Add `https://github.com/lucascorrea/cs2-match-card`
 2. Install "CS2 Match Card"
 3. Add the resource if needed: `/hacsfiles/cs2-match-card/cs2-match-card.js` (Javascript Module)
 
