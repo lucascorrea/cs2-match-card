@@ -5,6 +5,9 @@ const translations = {
     vs: "vs",
     live: "LIVE",
     final: "FINAL",
+    final_status: "FINISHED",
+    maps_won: "Maps",
+    no_score_available: "Score unavailable",
     no_match: "No upcoming match",
     no_match_for_team: "No upcoming matches found for {team}"
   },
@@ -14,6 +17,9 @@ const translations = {
     vs: "vs",
     live: "AO VIVO",
     final: "FINAL",
+    final_status: "Finalizado",
+    maps_won: "Mapas",
+    no_score_available: "Placar indisponível",
     no_match: "Nenhum jogo próximo",
     no_match_for_team: "Nenhum jogo encontrado para {team}"
   }

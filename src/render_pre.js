@@ -12,22 +12,26 @@ export function renderPre(c) {
       ${c.venue ? html`<div class="venue">${c.venue}</div>` : ""}
       <div class="card-content">
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[1] || "/local/cs2-placeholder.png"}"
-            alt="${c.name[1]}"
-            @error="${(e) => (e.target.style.display = "none")}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[1] || "/local/cs2-placeholder.png"}"
+              alt="${c.name[1]}"
+              @error="${(e) => (e.target.style.display = "none")}"
+            />
+          </div>
           <div class="name">${c.name[1] || "—"}</div>
         </div>
         <div class="divider">${c.vs}</div>
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[2] || "/local/cs2-placeholder.png"}"
-            alt="${c.name[2]}"
-            @error="${(e) => (e.target.style.display = "none")}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[2] || "/local/cs2-placeholder.png"}"
+              alt="${c.name[2]}"
+              @error="${(e) => (e.target.style.display = "none")}"
+            />
+          </div>
           <div class="name">${c.name[2] || "—"}</div>
         </div>
       </div>

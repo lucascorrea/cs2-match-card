@@ -40,20 +40,34 @@ export const cardStyles = css`
   .card-content {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
     position: relative;
     z-index: 1;
   }
   .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     width: 35%;
+    min-width: 0;
   }
-  .team img {
-    max-width: 130px;
+  .logo-box {
+    width: min(100%, 132px);
+    height: 7.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
   }
-  .logo {
-    max-height: 9.5em;
+  .logo-box .logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
   .score {
     font-size: var(--score_size, 3em);
@@ -95,6 +109,47 @@ export const cardStyles = css`
     position: absolute;
     right: 0;
   }
+  .final-badge {
+    background: #2e7d32;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+  }
+  .post-status-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0 16px;
+    position: relative;
+    z-index: 2;
+    min-height: 36px;
+  }
+  .final-pill {
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    font-size: 0.88em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 8px 20px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    position: relative;
+  }
+  .score-context {
+    font-size: 0.85em;
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin: 6px 0 0;
+    position: relative;
+    z-index: 1;
+  }
   .venue {
     font-size: 1em;
     color: var(--secondary-text-color);
@@ -123,8 +178,13 @@ export const cardStyles = css`
   }
   .divider {
     font-size: 2.5em;
+    line-height: 1;
     text-align: center;
     margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .not-found-msg {
     font-size: 1.2em;

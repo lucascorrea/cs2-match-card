@@ -15,23 +15,27 @@ export function renderIn(c) {
       </div>
       <div class="card-content">
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[1] || ""}"
-            alt="${c.name[1]}"
-            @error="${(e) => (e.target.style.display = "none")}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[1] || ""}"
+              alt="${c.name[1]}"
+              @error="${(e) => (e.target.style.display = "none")}"
+            />
+          </div>
           <div class="name">${c.name[1] || "—"}</div>
           <div class="score">${c.score[1] ?? "—"}</div>
         </div>
         <div class="divider">:</div>
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[2] || ""}"
-            alt="${c.name[2]}"
-            @error="${(e) => (e.target.style.display = "none")}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[2] || ""}"
+              alt="${c.name[2]}"
+              @error="${(e) => (e.target.style.display = "none")}"
+            />
+          </div>
           <div class="name">${c.name[2] || "—"}</div>
           <div class="score">${c.score[2] ?? "—"}</div>
         </div>

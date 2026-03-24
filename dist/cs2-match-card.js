@@ -1,4 +1,4 @@
-const $4fcaa3c95ba349ea$export$a4ad2735b021c132 = "v0.1.0";
+const $4fcaa3c95ba349ea$export$a4ad2735b021c132 = "v0.1.2";
 
 
 /**
@@ -632,22 +632,26 @@ function $32e2f72be859b718$export$d6bad15bd473a528(c) {
       ${c.venue ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="venue">${c.venue}</div>` : ""}
       <div class="card-content">
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[1] || "/local/cs2-placeholder.png"}"
-            alt="${c.name[1]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[1] || "/local/cs2-placeholder.png"}"
+              alt="${c.name[1]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[1] || "\u2014"}</div>
         </div>
         <div class="divider">${c.vs}</div>
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[2] || "/local/cs2-placeholder.png"}"
-            alt="${c.name[2]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[2] || "/local/cs2-placeholder.png"}"
+              alt="${c.name[2]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[2] || "\u2014"}</div>
         </div>
       </div>
@@ -681,23 +685,27 @@ function $654f96c20a3bcd40$export$3f4c9efb42c5bfd8(c) {
       </div>
       <div class="card-content">
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[1] || ""}"
-            alt="${c.name[1]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[1] || ""}"
+              alt="${c.name[1]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[1] || "\u2014"}</div>
           <div class="score">${c.score[1] ?? "\u2014"}</div>
         </div>
         <div class="divider">:</div>
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[2] || ""}"
-            alt="${c.name[2]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[2] || ""}"
+              alt="${c.name[2]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[2] || "\u2014"}</div>
           <div class="score">${c.score[2] ?? "\u2014"}</div>
         </div>
@@ -717,29 +725,38 @@ function $ba84a5acf45954c4$export$823f4865e91cfbff(c) {
       
       ${c.title ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="title">${c.title}</div>` : ""}
       <div class="line"></div>
+      <div class="post-status-strip">
+        <span class="final-pill">${c.finalStatus || c.final || "FINAL"}</span>
+      </div>
       <div class="card-content">
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[1] || ""}"
-            alt="${c.name[1]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[1] || ""}"
+              alt="${c.name[1]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[1] || "\u2014"}</div>
           <div class="score">${c.score[1] ?? "\u2014"}</div>
         </div>
         <div class="divider">:</div>
         <div class="team">
-          <img
-            class="logo"
-            src="${c.logo[2] || ""}"
-            alt="${c.name[2]}"
-            @error="${(e)=>e.target.style.display = "none"}"
-          />
+          <div class="logo-box">
+            <img
+              class="logo"
+              src="${c.logo[2] || ""}"
+              alt="${c.name[2]}"
+              @error="${(e)=>e.target.style.display = "none"}"
+            />
+          </div>
           <div class="name">${c.name[2] || "\u2014"}</div>
           <div class="score">${c.score[2] ?? "\u2014"}</div>
         </div>
       </div>
+      ${c.scoreKind === "maps" ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="score-context">${c.mapsLabel}</div>` : ""}
+      ${c.scoreKind === "none" ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="score-context">${c.noScoreHint}</div>` : ""}
       ${c.venue ? (0, $f58f44579a4747ac$export$c0bb0b647f701bb5)`<div class="venue">${c.venue}</div>` : ""}
     </ha-card>
   `;
@@ -821,20 +838,34 @@ const $1a7c5d625ead7579$export$c579ff79a032fc68 = (0, $def2de46b9306e8a$export$d
   .card-content {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
     text-align: center;
     position: relative;
     z-index: 1;
   }
   .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     width: 35%;
+    min-width: 0;
   }
-  .team img {
-    max-width: 130px;
+  .logo-box {
+    width: min(100%, 132px);
+    height: 7.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
   }
-  .logo {
-    max-height: 9.5em;
+  .logo-box .logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
   .score {
     font-size: var(--score_size, 3em);
@@ -876,6 +907,47 @@ const $1a7c5d625ead7579$export$c579ff79a032fc68 = (0, $def2de46b9306e8a$export$d
     position: absolute;
     right: 0;
   }
+  .final-badge {
+    background: #2e7d32;
+    color: white;
+    font-size: 0.9em;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+  }
+  .post-status-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0 16px;
+    position: relative;
+    z-index: 2;
+    min-height: 36px;
+  }
+  .final-pill {
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    font-size: 0.88em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 8px 20px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    position: relative;
+  }
+  .score-context {
+    font-size: 0.85em;
+    color: var(--secondary-text-color);
+    text-align: center;
+    margin: 6px 0 0;
+    position: relative;
+    z-index: 1;
+  }
   .venue {
     font-size: 1em;
     color: var(--secondary-text-color);
@@ -904,8 +976,13 @@ const $1a7c5d625ead7579$export$c579ff79a032fc68 = (0, $def2de46b9306e8a$export$d
   }
   .divider {
     font-size: 2.5em;
+    line-height: 1;
     text-align: center;
     margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .not-found-msg {
     font-size: 1.2em;
@@ -924,6 +1001,9 @@ const $22b27e2d84aa9878$var$translations = {
         vs: "vs",
         live: "LIVE",
         final: "FINAL",
+        final_status: "FINISHED",
+        maps_won: "Maps",
+        no_score_available: "Score unavailable",
         no_match: "No upcoming match",
         no_match_for_team: "No upcoming matches found for {team}"
     },
@@ -933,6 +1013,9 @@ const $22b27e2d84aa9878$var$translations = {
         vs: "vs",
         live: "AO VIVO",
         final: "FINAL",
+        final_status: "Finalizado",
+        maps_won: "Mapas",
+        no_score_available: "Placar indispon\xedvel",
         no_match: "Nenhum jogo pr\xf3ximo",
         no_match_for_team: "Nenhum jogo encontrado para {team}"
     }
@@ -1004,6 +1087,38 @@ function $22b27e2d84aa9878$export$228c5680a42db823(date, hass) {
 }
 
 
+function $542433e8f350e815$var$_usableScore(v) {
+    if (v === null || v === undefined) return false;
+    if (typeof v === "string") {
+        const s = v.trim().toLowerCase();
+        if (s === "" || s === "unknown" || s === "unavailable" || s === "none") return false;
+    }
+    return true;
+}
+function $542433e8f350e815$var$_toDisplayNumber(v) {
+    if (!$542433e8f350e815$var$_usableScore(v)) return null;
+    const n = Number(v);
+    return Number.isFinite(n) ? n : null;
+}
+function $542433e8f350e815$var$_apiMatchStatus(stateObj) {
+    const a = stateObj?.attributes ?? {};
+    return String(a.match_status ?? a.status ?? "").toLowerCase().trim();
+}
+/** BO3: alguém com ≥2 mapas; BO5: ≥3 (fallback se state/status não marcarem fim). */ function $542433e8f350e815$var$_seriesDecidedByMapWins(attrs) {
+    const w1 = Number(attrs?.team1Win);
+    const w2 = Number(attrs?.team2Win);
+    if (!Number.isFinite(w1) || !Number.isFinite(w2)) return false;
+    if (w1 >= 3 || w2 >= 3) return true;
+    if (w1 >= 2 || w2 >= 2) return true;
+    return false;
+}
+function $542433e8f350e815$var$_isFinishedMatchView(stateObj) {
+    if (!stateObj || stateObj.state === "NOT_FOUND") return false;
+    if (stateObj.state === "POST") return true;
+    const st = $542433e8f350e815$var$_apiMatchStatus(stateObj);
+    if (st === "end" || st === "over" || st === "finished" || st === "ended") return true;
+    return $542433e8f350e815$var$_seriesDecidedByMapWins(stateObj.attributes || {});
+}
 class $542433e8f350e815$export$703d10387f56a16f extends (0, $ab210b2da7b39b9d$export$3f2f9f5909897157) {
     static get properties() {
         return {
@@ -1022,6 +1137,7 @@ class $542433e8f350e815$export$703d10387f56a16f extends (0, $ab210b2da7b39b9d$ex
     getCardSize() {
         const stateObj = this.hass?.states?.[this._config?.entity];
         if (!stateObj) return 4;
+        if ($542433e8f350e815$var$_isFinishedMatchView(stateObj)) return 6;
         switch(stateObj.state){
             case "PRE":
                 return 6;
@@ -1048,14 +1164,32 @@ class $542433e8f350e815$export$703d10387f56a16f extends (0, $ab210b2da7b39b9d$ex
             notFoundMsg: attrs.api_message || this._getNoMatchMessage(attrs),
             vs: (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("vs", this.hass),
             live: (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("live", this.hass),
-            final: (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("final", this.hass)
+            final: (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("final", this.hass),
+            finalStatus: (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("final_status", this.hass)
         };
         c.logo[1] = attrs.team_logo;
         c.logo[2] = attrs.opponent_logo;
         c.name[1] = attrs.team_name || stateObj.entity_id?.split(".")[1] || "\u2014";
         c.name[2] = attrs.opponent_name || "\u2014";
-        c.score[1] = attrs.team_score;
-        c.score[2] = attrs.opponent_score;
+        const r1 = $542433e8f350e815$var$_toDisplayNumber(attrs.team_score);
+        const r2 = $542433e8f350e815$var$_toDisplayNumber(attrs.opponent_score);
+        const m1 = $542433e8f350e815$var$_toDisplayNumber(attrs.team1Win);
+        const m2 = $542433e8f350e815$var$_toDisplayNumber(attrs.team2Win);
+        if (r1 !== null && r2 !== null) {
+            c.score[1] = r1;
+            c.score[2] = r2;
+            c.scoreKind = "rounds";
+        } else if (m1 !== null || m2 !== null) {
+            c.score[1] = m1 ?? "\u2014";
+            c.score[2] = m2 ?? "\u2014";
+            c.scoreKind = "maps";
+        } else {
+            c.score[1] = null;
+            c.score[2] = null;
+            c.scoreKind = "none";
+        }
+        c.mapsLabel = (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("maps_won", this.hass);
+        c.noScoreHint = (0, $22b27e2d84aa9878$export$b3bd0bc58e36cd63)("no_score_available", this.hass);
         if (attrs.date) {
             const dateInfo = (0, $22b27e2d84aa9878$export$228c5680a42db823)(attrs.date, this.hass);
             if (dateInfo) {
@@ -1079,6 +1213,7 @@ class $542433e8f350e815$export$703d10387f56a16f extends (0, $ab210b2da7b39b9d$ex
         if (!stateObj) return (0, $07b3e4094688f328$export$adab126bb38c4dbc)(this._config.entity);
         if (stateObj.state === "unavailable") return (0, $07b3e4094688f328$export$83a5095ba0388927)(this._config.entity);
         const c = this._buildCardData(stateObj);
+        if ($542433e8f350e815$var$_isFinishedMatchView(stateObj)) return (0, $ba84a5acf45954c4$export$823f4865e91cfbff)(c);
         switch(stateObj.state){
             case "PRE":
                 return (0, $32e2f72be859b718$export$d6bad15bd473a528)(c);
